@@ -6,7 +6,8 @@ from uszipcode import ZipcodeSearchEngine
 from Step import Step
     
 def get_routes_json(start,end):
-    r = requests.get('https://maps.googleapis.com/maps/api/directions/json?origin='+start+'&destination='+end+'&alternatives=false&key=AIzaSyABYty7WX9zUoZMYjoEu75ZehIaVKnP2HQ')
+    API_KEY = 'X'
+    r = requests.get('https://maps.googleapis.com/maps/api/directions/json?origin='+start+'&destination='+end+'&alternatives=false&key='+API_KEY)
     j = r.json()
     return j
 
@@ -41,7 +42,7 @@ for step in steps:
 
 
 from darksky.api import DarkSky, DarkSkyAsync
-API_KEY = '4eb7898c91aa462d88c30f27ba0d3a38'
+API_KEY = 'X'
 darksky = DarkSky(API_KEY)
 
 for step in steps:
